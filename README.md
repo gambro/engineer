@@ -1,24 +1,55 @@
-# README
+# ENGINEER.AI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a test-project for [engineer.ai](https://www.engineer.ai/uk).
 
-Things you may want to cover:
+## Ruby version
 
-* Ruby version
+```
+2.5.1
+```
 
-* System dependencies
+## Development tools
 
-* Configuration
+### Database
 
-* Database creation
+Application uses postgresql as a database
 
-* Database initialization
+```sh
+rails db:create
+rails db:schema:load
+```
 
-* How to run the test suite
+### Server
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+bin/rails s
+```
 
-* Deployment instructions
+## Usage
 
-* ...
+### Create user
+
+```
+POST http://localhost:3000/users
+```
+
+Body params:
+
+```
+{"user": {"email": "test@test.com"}}
+```
+
+### Take number
+
+```
+POST http://localhost:3000/users/:id/take_number
+```
+
+id - id number created user
+
+Body params (optional)
+
+```
+{"user": {"phone": "777-777-7777"}}
+```
+
